@@ -10,7 +10,6 @@ let router = Router()
 
 // routes here
 
-router.get("polls/list") { request, response, next in
   defer { next() }
 
   let status = ["status": "ok"]
@@ -18,13 +17,14 @@ router.get("polls/list") { request, response, next in
   let json = JSON(result)
 
   response.status(.OK).send(json: json)
+router.get("/polls/list") { request, response, next in
 }
 
-router.post("polls/create") { request, response, next in
+router.post("/polls/create") { request, response, next in
   defer { next() }
 }
 
-router.post("polls/vote/:pollid/:option") { request, response, next in
+router.post("/polls/vote/:pollid/:option") { request, response, next in
   defer { next() }
 }
 
