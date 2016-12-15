@@ -4,7 +4,10 @@ import LoggerAPI
 import SwiftyJSON
 import CouchDB
 
-HeliumLogger.use()
+let logger = HeliumLogger()
+logger.colored = true
+Log.logger = logger
+
 let connectionProperties = ConnectionProperties(host: "localhost", port: 5984, secured: false)
 let client = CouchDBClient(connectionProperties: connectionProperties)
 let database = client.database("polls")
